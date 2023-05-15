@@ -75,9 +75,10 @@ bool FileHeader::Allocate(PersistentBitmap *freeMap, int fileSize)
         {
             indirectDataSectors[i] = freeMap->FindAndSet();
             IndirectDataSector *indirect = new IndirectDataSector();
-            indirect->setNumSectors(0);
+            indirect->SetNumSectors(0);
 
             sectorsInNeed = indirect->Allocate(freeMap, sectorsInNeed, indirectDataSectors[i]);
+            delete indirect;
         }
     }
     return TRUE;
@@ -96,6 +97,25 @@ void FileHeader::Deallocate(PersistentBitmap *freeMap)
     {
         ASSERT(freeMap->Test((int)dataSectors[i])); // ought to be marked!
         freeMap->Clear((int)dataSectors[i]);
+    }
+
+    // clear indirect sector
+    for (int i = 0; i < NumIndirect; i++)
+    {
+        ASSERT(freeMap->Test((int)indirectDataSectors[i]));
+
+        IndirectDataSector *indirect = new IndirectDataSector();
+        kernel->synchDisk->ReadSector((int)indirectDataSectors[i], (char *)indirect);
+        for (int j = 0; j < indirect->GetNumSectors(); j++)
+        {
+            int index = indirect->GetSectorNO(j);
+            ASSERT(freeMap->Test((int)index)); // ought to be marked!
+            freeMap->Clear((int)index);
+        }
+        freeMap->Clear((int)indirectDataSectors[i]);
+
+        // buntch of operations
+        delete indirect;
     }
 }
 
@@ -185,12 +205,12 @@ void FileHeader::Print()
 //	"sector" is the disk sector containing the file header
 //----------------------------------------------------------------------
 
-int IndirectDataSector::getNumSectors()
+int IndirectDataSector::GetNumSectors()
 {
     return numSectors;
 }
 
-void IndirectDataSector::setNumSectors(int count)
+void IndirectDataSector::SetNumSectors(int count)
 {
     numSectors = count;
 }
@@ -201,13 +221,18 @@ int IndirectDataSector::Allocate(PersistentBitmap *freeMap, int sectorsInNeed, i
     for (int i = 0; i < sectorsInNeed; i++)
     {
         dataSectors[i] = freeMap->FindAndSet();
-        int count = getNumSectors();
-        setNumSectors(count + 1);
+        int count = GetNumSectors();
+        SetNumSectors(count + 1);
     }
     // 將 IndirectDataSector 寫回 sector 裡
     kernel->synchDisk->WriteSector(indirectSectorIndex, (char *)this);
 
-    return sectorsInNeed - getNumSectors();
+    return sectorsInNeed - GetNumSectors();
+}
+
+int IndirectDataSector::GetSectorNO(int index)
+{
+    return dataSectors[index];
 }
 
 void IndirectDataSector::FetchFrom(int sector)

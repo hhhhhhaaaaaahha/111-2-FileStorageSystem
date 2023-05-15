@@ -71,13 +71,15 @@ private:
 class IndirectDataSector
 {
 public:
-  int getNumSectors();
+  int Allocate(PersistentBitmap *freeMap, int sectorsInNeed, int indirectSectorIndex);
 
-  void setNumSectors(int count);
+  int GetNumSectors();
+
+  int GetSectorNO(int index);
+
+  void SetNumSectors(int count);
 
   void FetchFrom(int sectorNumber); // Initialize file header from disk
-
-  int Allocate(PersistentBitmap *freeMap, int sectorsInNeed, int indirectSectorIndex);
 
 private:
   int numSectors;
