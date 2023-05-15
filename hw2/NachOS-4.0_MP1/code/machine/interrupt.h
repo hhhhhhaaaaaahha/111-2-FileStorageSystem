@@ -36,6 +36,7 @@
 #include "copyright.h"
 #include "list.h"
 #include "callback.h"
+#include "syscall.h"
 
 // Interrupts can be disabled (IntOff) or enabled (IntOn)
 enum IntStatus { IntOff, IntOn };
@@ -95,6 +96,11 @@ class Interrupt {
     void Halt(); 		// quit and print out stats
 
     void PrintInt(int number);
+
+    OpenFileId OpenFile(char *filename);
+    int WriteFile(char *buffer, int size, OpenFileId id);
+    int CloseFile(OpenFileId id);
+    int ReadFile(char *buffer, int size, OpenFileId id);
 	int CreateFile(char *filename);
  
     void YieldOnReturn();	// cause a context switch on return 

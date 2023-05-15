@@ -172,3 +172,14 @@ ConsoleOutput::PutChar(char ch)
     kernel->interrupt->Schedule(this, ConsoleTime, ConsoleWriteInt);
 }
 
+void
+ConsoleOutput::PutInt(int name)
+{
+    ASSERT(putBusy == FALSE);
+    char *buffer = (char*)malloc(sizeof(char) * 16);
+    sprintf(buffer, "%d\n", name);
+    WriteFile(writeFileNo, buffer, sizeof(char) * strlen(buffer));
+    putBusy = TRUE;
+    kernel->interrupt->Schedule(this, ConsoleTime, ConsoleWriteInt);
+
+}
