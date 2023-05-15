@@ -114,7 +114,6 @@ void FileHeader::Deallocate(PersistentBitmap *freeMap)
         }
         freeMap->Clear((int)indirectDataSectors[i]);
 
-        // buntch of operations
         delete indirect;
     }
 }
@@ -155,7 +154,24 @@ void FileHeader::WriteBack(int sector)
 
 int FileHeader::ByteToSector(int offset)
 {
-    return (dataSectors[offset / SectorSize]);
+    int index = offset / SectorSize;
+    if (index < NumDirect)
+    {
+        return (dataSectors[index]);
+    }
+    else
+    {
+        int remainSectors = index - NumDirect;
+        int indirectSectorNO = remainSectors / SectorNumInsideIndirect;
+        int indexInIndirectSector = remainSectors % SectorNumInsideIndirect;
+
+        IndirectDataSector *indirect = new IndirectDataSector();
+        kernel->synchDisk->ReadSector((int)indirectDataSectors[indirectSectorNO], (char *)indirect);
+
+        int returnValue = indirect->GetSectorNO(indexInIndirectSector);
+        delete indirect;
+        return returnValue;
+    }
 }
 
 //----------------------------------------------------------------------
