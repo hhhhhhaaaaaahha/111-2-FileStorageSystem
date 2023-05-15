@@ -678,8 +678,18 @@ interrupt.o: ../machine/interrupt.cc /usr/include/stdc-predef.h \
  ../machine/callback.h ../userprog/syscall.h ../userprog/errno.h \
  ../threads/main.h ../threads/kernel.h ../threads/thread.h \
  ../machine/machine.h ../machine/translate.h ../userprog/addrspace.h \
- ../filesys/filesys.h ../filesys/openfile.h ../threads/scheduler.h \
- ../machine/stats.h ../threads/alarm.h ../machine/timer.h
+ ../filesys/filesys.h /usr/include/c++/11/map \
+ /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/stl_map.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/include/c++/11/bits/erase_if.h ../filesys/openfile.h \
+ ../threads/scheduler.h ../machine/stats.h ../threads/alarm.h \
+ ../machine/timer.h
 stats.o: ../machine/stats.cc /usr/include/stdc-predef.h \
  ../lib/copyright.h ../lib/debug.h ../lib/utility.h ../lib/sysdep.h \
  /usr/include/c++/11/iostream \
@@ -934,10 +944,19 @@ timer.o: ../machine/timer.cc /usr/include/stdc-predef.h \
  /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/stdlib.h \
  /usr/include/string.h /usr/include/strings.h ../threads/kernel.h \
  ../threads/thread.h ../machine/machine.h ../machine/translate.h \
- ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../userprog/syscall.h ../userprog/errno.h ../threads/scheduler.h \
- ../lib/list.h ../lib/list.cc ../machine/interrupt.h ../machine/stats.h \
- ../threads/alarm.h
+ ../userprog/addrspace.h ../filesys/filesys.h /usr/include/c++/11/map \
+ /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/stl_map.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/include/c++/11/bits/erase_if.h ../filesys/openfile.h \
+ ../threads/scheduler.h ../lib/list.h ../lib/list.cc \
+ ../machine/interrupt.h ../userprog/syscall.h ../userprog/errno.h \
+ ../machine/stats.h ../threads/alarm.h
 console.o: ../machine/console.cc /usr/include/stdc-predef.h \
  ../lib/copyright.h ../machine/console.h ../lib/utility.h \
  ../machine/callback.h ../threads/main.h ../lib/debug.h ../lib/sysdep.h \
@@ -1066,10 +1085,19 @@ console.o: ../machine/console.cc /usr/include/stdc-predef.h \
  /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/stdlib.h \
  /usr/include/string.h /usr/include/strings.h ../threads/kernel.h \
  ../threads/thread.h ../machine/machine.h ../machine/translate.h \
- ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../userprog/syscall.h ../userprog/errno.h ../threads/scheduler.h \
- ../lib/list.h ../lib/list.cc ../machine/interrupt.h ../machine/stats.h \
- ../threads/alarm.h ../machine/timer.h
+ ../userprog/addrspace.h ../filesys/filesys.h /usr/include/c++/11/map \
+ /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/stl_map.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/include/c++/11/bits/erase_if.h ../filesys/openfile.h \
+ ../threads/scheduler.h ../lib/list.h ../lib/list.cc \
+ ../machine/interrupt.h ../userprog/syscall.h ../userprog/errno.h \
+ ../machine/stats.h ../threads/alarm.h ../machine/timer.h
 machine.o: ../machine/machine.cc /usr/include/stdc-predef.h \
  ../lib/copyright.h ../machine/machine.h ../lib/utility.h \
  ../machine/translate.h ../threads/main.h ../lib/debug.h ../lib/sysdep.h \
@@ -1198,10 +1226,19 @@ machine.o: ../machine/machine.cc /usr/include/stdc-predef.h \
  /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/stdlib.h \
  /usr/include/string.h /usr/include/strings.h ../threads/kernel.h \
  ../threads/thread.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../userprog/syscall.h ../userprog/errno.h \
+ /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/stl_map.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/include/c++/11/bits/erase_if.h ../filesys/openfile.h \
  ../threads/scheduler.h ../lib/list.h ../lib/list.cc \
- ../machine/interrupt.h ../machine/callback.h ../machine/stats.h \
- ../threads/alarm.h ../machine/timer.h
+ ../machine/interrupt.h ../machine/callback.h ../userprog/syscall.h \
+ ../userprog/errno.h ../machine/stats.h ../threads/alarm.h \
+ ../machine/timer.h
 mipssim.o: ../machine/mipssim.cc /usr/include/stdc-predef.h \
  ../lib/copyright.h ../lib/debug.h ../lib/utility.h ../lib/sysdep.h \
  /usr/include/c++/11/iostream \
@@ -1330,10 +1367,20 @@ mipssim.o: ../machine/mipssim.cc /usr/include/stdc-predef.h \
  /usr/include/string.h /usr/include/strings.h ../machine/machine.h \
  ../machine/translate.h ../machine/mipssim.h ../threads/main.h \
  ../threads/kernel.h ../threads/thread.h ../userprog/addrspace.h \
- ../filesys/filesys.h ../filesys/openfile.h ../userprog/syscall.h \
- ../userprog/errno.h ../threads/scheduler.h ../lib/list.h ../lib/list.cc \
- ../machine/interrupt.h ../machine/callback.h ../machine/stats.h \
- ../threads/alarm.h ../machine/timer.h
+ ../filesys/filesys.h /usr/include/c++/11/map \
+ /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/stl_map.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/include/c++/11/bits/erase_if.h ../filesys/openfile.h \
+ ../threads/scheduler.h ../lib/list.h ../lib/list.cc \
+ ../machine/interrupt.h ../machine/callback.h ../userprog/syscall.h \
+ ../userprog/errno.h ../machine/stats.h ../threads/alarm.h \
+ ../machine/timer.h
 translate.o: ../machine/translate.cc /usr/include/stdc-predef.h \
  ../lib/copyright.h ../threads/main.h ../lib/debug.h ../lib/utility.h \
  ../lib/sysdep.h /usr/include/c++/11/iostream \
@@ -1461,10 +1508,19 @@ translate.o: ../machine/translate.cc /usr/include/stdc-predef.h \
  /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/stdlib.h \
  /usr/include/string.h /usr/include/strings.h ../threads/kernel.h \
  ../threads/thread.h ../machine/machine.h ../machine/translate.h \
- ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../userprog/syscall.h ../userprog/errno.h ../threads/scheduler.h \
- ../lib/list.h ../lib/list.cc ../machine/interrupt.h \
- ../machine/callback.h ../machine/stats.h ../threads/alarm.h \
+ ../userprog/addrspace.h ../filesys/filesys.h /usr/include/c++/11/map \
+ /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/stl_map.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/include/c++/11/bits/erase_if.h ../filesys/openfile.h \
+ ../threads/scheduler.h ../lib/list.h ../lib/list.cc \
+ ../machine/interrupt.h ../machine/callback.h ../userprog/syscall.h \
+ ../userprog/errno.h ../machine/stats.h ../threads/alarm.h \
  ../machine/timer.h
 network.o: ../machine/network.cc /usr/include/stdc-predef.h \
  ../lib/copyright.h ../machine/network.h ../lib/utility.h \
@@ -1594,10 +1650,19 @@ network.o: ../machine/network.cc /usr/include/stdc-predef.h \
  /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/stdlib.h \
  /usr/include/string.h /usr/include/strings.h ../threads/kernel.h \
  ../threads/thread.h ../machine/machine.h ../machine/translate.h \
- ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../userprog/syscall.h ../userprog/errno.h ../threads/scheduler.h \
- ../lib/list.h ../lib/list.cc ../machine/interrupt.h ../machine/stats.h \
- ../threads/alarm.h ../machine/timer.h
+ ../userprog/addrspace.h ../filesys/filesys.h /usr/include/c++/11/map \
+ /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/stl_map.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/include/c++/11/bits/erase_if.h ../filesys/openfile.h \
+ ../threads/scheduler.h ../lib/list.h ../lib/list.cc \
+ ../machine/interrupt.h ../userprog/syscall.h ../userprog/errno.h \
+ ../machine/stats.h ../threads/alarm.h ../machine/timer.h
 disk.o: ../machine/disk.cc /usr/include/stdc-predef.h ../lib/copyright.h \
  ../machine/disk.h ../lib/utility.h ../machine/callback.h ../lib/debug.h \
  ../lib/sysdep.h /usr/include/c++/11/iostream \
@@ -1726,10 +1791,18 @@ disk.o: ../machine/disk.cc /usr/include/stdc-predef.h ../lib/copyright.h \
  /usr/include/string.h /usr/include/strings.h ../threads/main.h \
  ../threads/kernel.h ../threads/thread.h ../machine/machine.h \
  ../machine/translate.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../userprog/syscall.h ../userprog/errno.h \
+ /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/stl_map.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/include/c++/11/bits/erase_if.h ../filesys/openfile.h \
  ../threads/scheduler.h ../lib/list.h ../lib/list.cc \
- ../machine/interrupt.h ../machine/stats.h ../threads/alarm.h \
- ../machine/timer.h
+ ../machine/interrupt.h ../userprog/syscall.h ../userprog/errno.h \
+ ../machine/stats.h ../threads/alarm.h ../machine/timer.h
 alarm.o: ../threads/alarm.cc /usr/include/stdc-predef.h \
  ../lib/copyright.h ../threads/alarm.h ../lib/utility.h \
  ../machine/callback.h ../machine/timer.h ../threads/main.h \
@@ -1858,9 +1931,19 @@ alarm.o: ../threads/alarm.cc /usr/include/stdc-predef.h \
  /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/stdlib.h \
  /usr/include/string.h /usr/include/strings.h ../threads/kernel.h \
  ../threads/thread.h ../machine/machine.h ../machine/translate.h \
- ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../userprog/syscall.h ../userprog/errno.h ../threads/scheduler.h \
- ../lib/list.h ../lib/list.cc ../machine/interrupt.h ../machine/stats.h
+ ../userprog/addrspace.h ../filesys/filesys.h /usr/include/c++/11/map \
+ /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/stl_map.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/include/c++/11/bits/erase_if.h ../filesys/openfile.h \
+ ../threads/scheduler.h ../lib/list.h ../lib/list.cc \
+ ../machine/interrupt.h ../userprog/syscall.h ../userprog/errno.h \
+ ../machine/stats.h
 kernel.o: ../threads/kernel.cc /usr/include/stdc-predef.h \
  ../lib/copyright.h ../lib/debug.h ../lib/utility.h ../lib/sysdep.h \
  /usr/include/c++/11/iostream \
@@ -1989,13 +2072,22 @@ kernel.o: ../threads/kernel.cc /usr/include/stdc-predef.h \
  /usr/include/string.h /usr/include/strings.h ../threads/main.h \
  ../threads/kernel.h ../threads/thread.h ../machine/machine.h \
  ../machine/translate.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../userprog/syscall.h ../userprog/errno.h \
+ /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/stl_map.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/include/c++/11/bits/erase_if.h ../filesys/openfile.h \
  ../threads/scheduler.h ../lib/list.h ../lib/list.cc \
- ../machine/interrupt.h ../machine/callback.h ../machine/stats.h \
- ../threads/alarm.h ../machine/timer.h ../threads/synch.h \
- ../threads/synchlist.h ../threads/synchlist.cc ../lib/libtest.h \
- ../filesys/synchdisk.h ../machine/disk.h ../network/post.h \
- ../machine/network.h ../userprog/synchconsole.h ../machine/console.h
+ ../machine/interrupt.h ../machine/callback.h ../userprog/syscall.h \
+ ../userprog/errno.h ../machine/stats.h ../threads/alarm.h \
+ ../machine/timer.h ../threads/synch.h ../threads/synchlist.h \
+ ../threads/synchlist.cc ../lib/libtest.h ../filesys/synchdisk.h \
+ ../machine/disk.h ../network/post.h ../machine/network.h \
+ ../userprog/synchconsole.h ../machine/console.h
 main.o: ../threads/main.cc /usr/include/stdc-predef.h ../lib/copyright.h \
  ../threads/main.h ../lib/debug.h ../lib/utility.h ../lib/sysdep.h \
  /usr/include/c++/11/iostream \
@@ -2123,10 +2215,19 @@ main.o: ../threads/main.cc /usr/include/stdc-predef.h ../lib/copyright.h \
  /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/stdlib.h \
  /usr/include/string.h /usr/include/strings.h ../threads/kernel.h \
  ../threads/thread.h ../machine/machine.h ../machine/translate.h \
- ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../userprog/syscall.h ../userprog/errno.h ../threads/scheduler.h \
- ../lib/list.h ../lib/list.cc ../machine/interrupt.h \
- ../machine/callback.h ../machine/stats.h ../threads/alarm.h \
+ ../userprog/addrspace.h ../filesys/filesys.h /usr/include/c++/11/map \
+ /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/stl_map.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/include/c++/11/bits/erase_if.h ../filesys/openfile.h \
+ ../threads/scheduler.h ../lib/list.h ../lib/list.cc \
+ ../machine/interrupt.h ../machine/callback.h ../userprog/syscall.h \
+ ../userprog/errno.h ../machine/stats.h ../threads/alarm.h \
  ../machine/timer.h
 scheduler.o: ../threads/scheduler.cc /usr/include/stdc-predef.h \
  ../lib/copyright.h ../lib/debug.h ../lib/utility.h ../lib/sysdep.h \
@@ -2256,10 +2357,18 @@ scheduler.o: ../threads/scheduler.cc /usr/include/stdc-predef.h \
  /usr/include/string.h /usr/include/strings.h ../threads/scheduler.h \
  ../lib/list.h ../lib/list.cc ../threads/thread.h ../machine/machine.h \
  ../machine/translate.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../userprog/syscall.h ../userprog/errno.h \
+ /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/stl_map.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/include/c++/11/bits/erase_if.h ../filesys/openfile.h \
  ../threads/main.h ../threads/kernel.h ../machine/interrupt.h \
- ../machine/callback.h ../machine/stats.h ../threads/alarm.h \
- ../machine/timer.h
+ ../machine/callback.h ../userprog/syscall.h ../userprog/errno.h \
+ ../machine/stats.h ../threads/alarm.h ../machine/timer.h
 synch.o: ../threads/synch.cc /usr/include/stdc-predef.h \
  ../lib/copyright.h ../threads/synch.h ../threads/thread.h \
  ../lib/utility.h ../lib/sysdep.h /usr/include/c++/11/iostream \
@@ -2387,11 +2496,19 @@ synch.o: ../threads/synch.cc /usr/include/stdc-predef.h \
  /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/stdlib.h \
  /usr/include/string.h /usr/include/strings.h ../machine/machine.h \
  ../machine/translate.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../userprog/syscall.h ../userprog/errno.h \
- ../lib/list.h ../lib/debug.h ../lib/list.cc ../threads/main.h \
- ../threads/kernel.h ../threads/scheduler.h ../machine/interrupt.h \
- ../machine/callback.h ../machine/stats.h ../threads/alarm.h \
- ../machine/timer.h
+ /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/stl_map.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/include/c++/11/bits/erase_if.h ../filesys/openfile.h ../lib/list.h \
+ ../lib/debug.h ../lib/list.cc ../threads/main.h ../threads/kernel.h \
+ ../threads/scheduler.h ../machine/interrupt.h ../machine/callback.h \
+ ../userprog/syscall.h ../userprog/errno.h ../machine/stats.h \
+ ../threads/alarm.h ../machine/timer.h
 synchlist.o: ../threads/synchlist.cc /usr/include/stdc-predef.h \
  ../lib/copyright.h ../threads/synchlist.h ../lib/list.h ../lib/debug.h \
  ../lib/utility.h ../lib/sysdep.h /usr/include/c++/11/iostream \
@@ -2520,10 +2637,19 @@ synchlist.o: ../threads/synchlist.cc /usr/include/stdc-predef.h \
  /usr/include/string.h /usr/include/strings.h ../lib/list.cc \
  ../threads/synch.h ../threads/thread.h ../machine/machine.h \
  ../machine/translate.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../userprog/syscall.h ../userprog/errno.h \
+ /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/stl_map.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/include/c++/11/bits/erase_if.h ../filesys/openfile.h \
  ../threads/main.h ../threads/kernel.h ../threads/scheduler.h \
- ../machine/interrupt.h ../machine/callback.h ../machine/stats.h \
- ../threads/alarm.h ../machine/timer.h ../threads/synchlist.cc
+ ../machine/interrupt.h ../machine/callback.h ../userprog/syscall.h \
+ ../userprog/errno.h ../machine/stats.h ../threads/alarm.h \
+ ../machine/timer.h ../threads/synchlist.cc
 thread.o: ../threads/thread.cc /usr/include/stdc-predef.h \
  ../lib/copyright.h ../threads/thread.h ../lib/utility.h ../lib/sysdep.h \
  /usr/include/c++/11/iostream \
@@ -2651,11 +2777,20 @@ thread.o: ../threads/thread.cc /usr/include/stdc-predef.h \
  /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/stdlib.h \
  /usr/include/string.h /usr/include/strings.h ../machine/machine.h \
  ../machine/translate.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../userprog/syscall.h ../userprog/errno.h \
+ /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/stl_map.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/include/c++/11/bits/erase_if.h ../filesys/openfile.h \
  ../threads/switch.h ../threads/synch.h ../lib/list.h ../lib/debug.h \
  ../lib/list.cc ../threads/main.h ../threads/kernel.h \
  ../threads/scheduler.h ../machine/interrupt.h ../machine/callback.h \
- ../machine/stats.h ../threads/alarm.h ../machine/timer.h
+ ../userprog/syscall.h ../userprog/errno.h ../machine/stats.h \
+ ../threads/alarm.h ../machine/timer.h
 addrspace.o: ../userprog/addrspace.cc /usr/include/stdc-predef.h \
  ../lib/copyright.h ../threads/main.h ../lib/debug.h ../lib/utility.h \
  ../lib/sysdep.h /usr/include/c++/11/iostream \
@@ -2783,10 +2918,19 @@ addrspace.o: ../userprog/addrspace.cc /usr/include/stdc-predef.h \
  /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/stdlib.h \
  /usr/include/string.h /usr/include/strings.h ../threads/kernel.h \
  ../threads/thread.h ../machine/machine.h ../machine/translate.h \
- ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../userprog/syscall.h ../userprog/errno.h ../threads/scheduler.h \
- ../lib/list.h ../lib/list.cc ../machine/interrupt.h \
- ../machine/callback.h ../machine/stats.h ../threads/alarm.h \
+ ../userprog/addrspace.h ../filesys/filesys.h /usr/include/c++/11/map \
+ /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/stl_map.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/include/c++/11/bits/erase_if.h ../filesys/openfile.h \
+ ../threads/scheduler.h ../lib/list.h ../lib/list.cc \
+ ../machine/interrupt.h ../machine/callback.h ../userprog/syscall.h \
+ ../userprog/errno.h ../machine/stats.h ../threads/alarm.h \
  ../machine/timer.h ../userprog/noff.h
 exception.o: ../userprog/exception.cc /usr/include/stdc-predef.h \
  ../lib/copyright.h ../threads/main.h ../lib/debug.h ../lib/utility.h \
@@ -2915,10 +3059,19 @@ exception.o: ../userprog/exception.cc /usr/include/stdc-predef.h \
  /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/stdlib.h \
  /usr/include/string.h /usr/include/strings.h ../threads/kernel.h \
  ../threads/thread.h ../machine/machine.h ../machine/translate.h \
- ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../userprog/syscall.h ../userprog/errno.h ../threads/scheduler.h \
- ../lib/list.h ../lib/list.cc ../machine/interrupt.h \
- ../machine/callback.h ../machine/stats.h ../threads/alarm.h \
+ ../userprog/addrspace.h ../filesys/filesys.h /usr/include/c++/11/map \
+ /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/stl_map.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/include/c++/11/bits/erase_if.h ../filesys/openfile.h \
+ ../threads/scheduler.h ../lib/list.h ../lib/list.cc \
+ ../machine/interrupt.h ../machine/callback.h ../userprog/syscall.h \
+ ../userprog/errno.h ../machine/stats.h ../threads/alarm.h \
  ../machine/timer.h ../userprog/ksyscall.h ../userprog/synchconsole.h \
  ../machine/console.h ../threads/synch.h
 synchconsole.o: ../userprog/synchconsole.cc /usr/include/stdc-predef.h \
@@ -3049,10 +3202,19 @@ synchconsole.o: ../userprog/synchconsole.cc /usr/include/stdc-predef.h \
  /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/stdlib.h \
  /usr/include/string.h /usr/include/strings.h ../machine/machine.h \
  ../machine/translate.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../userprog/syscall.h ../userprog/errno.h \
- ../lib/list.h ../lib/debug.h ../lib/list.cc ../threads/main.h \
- ../threads/kernel.h ../threads/scheduler.h ../machine/interrupt.h \
- ../machine/stats.h ../threads/alarm.h ../machine/timer.h
+ /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/stl_map.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/include/c++/11/bits/erase_if.h ../filesys/openfile.h ../lib/list.h \
+ ../lib/debug.h ../lib/list.cc ../threads/main.h ../threads/kernel.h \
+ ../threads/scheduler.h ../machine/interrupt.h ../userprog/syscall.h \
+ ../userprog/errno.h ../machine/stats.h ../threads/alarm.h \
+ ../machine/timer.h
 directory.o: ../filesys/directory.cc /usr/include/stdc-predef.h \
  ../lib/copyright.h ../lib/utility.h ../filesys/filehdr.h \
  ../machine/disk.h ../machine/callback.h ../filesys/pbitmap.h \
@@ -3311,10 +3473,19 @@ filehdr.o: ../filesys/filehdr.cc /usr/include/stdc-predef.h \
  /usr/include/string.h /usr/include/strings.h ../lib/debug.h \
  ../filesys/synchdisk.h ../threads/synch.h ../threads/thread.h \
  ../machine/machine.h ../machine/translate.h ../userprog/addrspace.h \
- ../filesys/filesys.h ../userprog/syscall.h ../userprog/errno.h \
- ../lib/list.h ../lib/list.cc ../threads/main.h ../threads/kernel.h \
- ../threads/scheduler.h ../machine/interrupt.h ../machine/stats.h \
- ../threads/alarm.h ../machine/timer.h
+ ../filesys/filesys.h /usr/include/c++/11/map \
+ /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/stl_map.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/include/c++/11/bits/erase_if.h ../lib/list.h ../lib/list.cc \
+ ../threads/main.h ../threads/kernel.h ../threads/scheduler.h \
+ ../machine/interrupt.h ../userprog/syscall.h ../userprog/errno.h \
+ ../machine/stats.h ../threads/alarm.h ../machine/timer.h
 filesys.o: ../filesys/filesys.cc /usr/include/stdc-predef.h \
  ../lib/copyright.h ../lib/debug.h ../lib/utility.h ../lib/sysdep.h \
  /usr/include/c++/11/iostream \
@@ -3443,7 +3614,16 @@ filesys.o: ../filesys/filesys.cc /usr/include/stdc-predef.h \
  /usr/include/string.h /usr/include/strings.h ../machine/disk.h \
  ../machine/callback.h ../filesys/pbitmap.h ../lib/bitmap.h \
  ../filesys/openfile.h ../filesys/directory.h ../filesys/filehdr.h \
- ../filesys/filesys.h ../userprog/syscall.h ../userprog/errno.h
+ ../filesys/filesys.h /usr/include/c++/11/map \
+ /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/stl_map.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/include/c++/11/bits/erase_if.h
 pbitmap.o: ../filesys/pbitmap.cc /usr/include/stdc-predef.h \
  ../lib/copyright.h ../filesys/pbitmap.h ../lib/bitmap.h ../lib/utility.h \
  ../filesys/openfile.h ../lib/sysdep.h /usr/include/c++/11/iostream \
@@ -3697,10 +3877,19 @@ openfile.o: ../filesys/openfile.cc /usr/include/stdc-predef.h \
  /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/stdlib.h \
  /usr/include/string.h /usr/include/strings.h ../threads/kernel.h \
  ../threads/thread.h ../machine/machine.h ../machine/translate.h \
- ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../userprog/syscall.h ../userprog/errno.h ../threads/scheduler.h \
- ../lib/list.h ../lib/list.cc ../machine/interrupt.h \
- ../machine/callback.h ../machine/stats.h ../threads/alarm.h \
+ ../userprog/addrspace.h ../filesys/filesys.h /usr/include/c++/11/map \
+ /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/stl_map.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/include/c++/11/bits/erase_if.h ../filesys/openfile.h \
+ ../threads/scheduler.h ../lib/list.h ../lib/list.cc \
+ ../machine/interrupt.h ../machine/callback.h ../userprog/syscall.h \
+ ../userprog/errno.h ../machine/stats.h ../threads/alarm.h \
  ../machine/timer.h ../filesys/filehdr.h ../machine/disk.h \
  ../filesys/pbitmap.h ../lib/bitmap.h ../filesys/synchdisk.h \
  ../threads/synch.h
@@ -3832,10 +4021,19 @@ synchdisk.o: ../filesys/synchdisk.cc /usr/include/stdc-predef.h \
  /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/stdlib.h \
  /usr/include/string.h /usr/include/strings.h ../machine/machine.h \
  ../machine/translate.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../userprog/syscall.h ../userprog/errno.h \
- ../lib/list.h ../lib/debug.h ../lib/list.cc ../threads/main.h \
- ../threads/kernel.h ../threads/scheduler.h ../machine/interrupt.h \
- ../machine/stats.h ../threads/alarm.h ../machine/timer.h
+ /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/stl_map.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/include/c++/11/bits/erase_if.h ../filesys/openfile.h ../lib/list.h \
+ ../lib/debug.h ../lib/list.cc ../threads/main.h ../threads/kernel.h \
+ ../threads/scheduler.h ../machine/interrupt.h ../userprog/syscall.h \
+ ../userprog/errno.h ../machine/stats.h ../threads/alarm.h \
+ ../machine/timer.h
 post.o: ../network/post.cc /usr/include/stdc-predef.h ../lib/copyright.h \
  ../network/post.h ../lib/utility.h ../machine/callback.h \
  ../machine/network.h ../threads/synchlist.h ../lib/list.h ../lib/debug.h \
@@ -3965,10 +4163,19 @@ post.o: ../network/post.cc /usr/include/stdc-predef.h ../lib/copyright.h \
  /usr/include/string.h /usr/include/strings.h ../lib/list.cc \
  ../threads/synch.h ../threads/thread.h ../machine/machine.h \
  ../machine/translate.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../userprog/syscall.h ../userprog/errno.h \
+ /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/stl_map.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/include/c++/11/bits/erase_if.h ../filesys/openfile.h \
  ../threads/main.h ../threads/kernel.h ../threads/scheduler.h \
- ../machine/interrupt.h ../machine/stats.h ../threads/alarm.h \
- ../machine/timer.h ../threads/synchlist.cc
+ ../machine/interrupt.h ../userprog/syscall.h ../userprog/errno.h \
+ ../machine/stats.h ../threads/alarm.h ../machine/timer.h \
+ ../threads/synchlist.cc
 # DEPENDENCIES MUST END AT END OF FILE
 # IF YOU PUT STUFF HERE IT WILL GO AWAY
 # see make depend above

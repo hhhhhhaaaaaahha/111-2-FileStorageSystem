@@ -341,4 +341,50 @@ void FileSystem::Print()
     delete directory;
 }
 
+int FileSystem::Read(char *buffer, int size, OpenFileId id)
+{
+    OpenFile *openFile = fdtable[id];
+    if (!openFile)
+        return -1;
+    return openFile->Read(buffer, size);
+}
+
+int FileSystem::Write(char *buffer, int size, OpenFileId id)
+{
+    OpenFile *openFile = fdtable[id];
+    if (!openFile)
+        return -1;
+    return openFile->Write(buffer, size);
+}
+
+OpenFileId FileSystem::OpenAFile(char *name)
+{
+    Directory *directory = new Directory(NumDirEntries);
+    OpenFile *openFile = NULL;
+    int sector;
+    DEBUG(dbgFile, "Opening file" << name);
+    directory->FetchFrom(directoryFile);
+    sector = directory->Find(name);
+    if (sector >= 0)
+    {
+        openFile = new OpenFile(sector); // name was found in directory
+        fdtable.insert({sector, openFile});
+        return sector;
+    }
+    return -1;
+}
+
+int FileSystem::Close(OpenFileId id)
+{
+    OpenFile *openFile = fdtable[id];
+    if (!openFile)
+        return 0;
+
+    OpenFile *eraseFile = openFile;
+    fdtable.erase(id);
+    delete eraseFile;
+
+    return 1;
+}
+
 #endif // FILESYS_STUB

@@ -302,14 +302,13 @@ int main(int argc, char **argv)
 
     // finally, run an initial user program if requested to do so
 
-    if (userProgName != NULL)
-        kernel->ExecAll();
+    kernel->ExecAll();
     // If we don't run a user program, we may get here.
     // Calling "return" would terminate the program.
     // Instead, call Halt, which will first clean up, then
     //  terminate.
-    else
-        kernel->interrupt->Halt();
+
+    // kernel->interrupt->Halt();
 
     ASSERTNOTREACHED();
 }

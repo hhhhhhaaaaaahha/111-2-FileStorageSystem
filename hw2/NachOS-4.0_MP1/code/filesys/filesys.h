@@ -35,6 +35,8 @@
 
 #define FDTABLE_LEN 20
 
+#include <map>
+
 #include "copyright.h"
 #include "sysdep.h"
 #include "openfile.h"
@@ -160,73 +162,13 @@ public:
 
 	OpenFile *Open(char *name); // Open a file (UNIX open)
 
-	int WriteFile0(char *buffer, int size, OpenFileId id)
-	{
-		for (int i = 0; i < FDTABLE_LEN; i++)
-		{
-			if (!fileDescriptorTable[i])
-				continue;
-			if (fileDescriptorTable[i]->GetFileDescriptor() == id)
-			{
-				return fileDescriptorTable[i]->Write(buffer, size);
-			}
-		}
-		return -1;
-	}
+	int Write(char *buffer, int size, OpenFileId id);
 
-	int ReadFile(char *buffer, int size, OpenFileId id)
-	{
-		for (int i = 0; i < FDTABLE_LEN; i++)
-		{
-			if (!fileDescriptorTable[i])
-				continue;
-			if (fileDescriptorTable[i]->GetFileDescriptor() == id)
-			{
-				return fileDescriptorTable[i]->Read(buffer, size);
-			}
-		}
-		return -1;
-	}
+	int Read(char *buffer, int size, OpenFileId id);
 
-	OpenFileId OpenAFile(char *name)
-	{
-		OpenFile *file = Open(name);
-		if (!file)
-		{
-			return -1;
-		}
-		int freeIndex = 0;
-		for (int i = 0; i < FDTABLE_LEN; i++)
-		{
-			if (!fileDescriptorTable[i])
-			{
-				freeIndex = i;
-			}
-		}
-		if (!freeIndex)
-		{
-			return -1;
-		}
-		OpenFileId id = file->GetFileDescriptor();
-		fileDescriptorTable[freeIndex] = file;
-		return id;
-	}
+	OpenFileId OpenAFile(char *name);
 
-	int CloseFile(OpenFileId id)
-	{
-		for (int i = 0; i < FDTABLE_LEN; i++)
-		{
-			if (!fileDescriptorTable[i])
-				continue;
-			if (fileDescriptorTable[i]->GetFileDescriptor() == id)
-			{
-				delete fileDescriptorTable[i];
-				fileDescriptorTable[i] = NULL;
-				return 1;
-			}
-		}
-		return 0;
-	}
+	int Close(OpenFileId id);
 
 	bool Remove(char *name); // Delete a file (UNIX unlink)
 
@@ -241,6 +183,7 @@ private:
 							 // represented as a file
 	OpenFile *directoryFile; // "Root" directory -- list of
 							 // file names, represented as a file
+	std::map<OpenFileId, OpenFile *> fdtable;
 };
 
 #endif // FILESYS

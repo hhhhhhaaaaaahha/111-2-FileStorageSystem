@@ -22,17 +22,17 @@ OpenFileId SysOpen(char *name)
 
 int SysWrite(char *buffer, int size, OpenFileId id)
 {
-  return kernel->fileSystem->WriteFile0(buffer, size, id);
+  return kernel->fileSystem->Write(buffer, size, id);
 }
 
 int SysRead(char *buffer, int size, OpenFileId id)
 {
-  return kernel->fileSystem->ReadFile(buffer, size, id);
+  return kernel->fileSystem->Read(buffer, size, id);
 }
 
 int SysClose(OpenFileId id)
 {
-  return kernel->fileSystem->CloseFile(id);
+  return kernel->fileSystem->Close(id);
 }
 
 void SysHalt()
@@ -50,6 +50,7 @@ int SysAdd(int op1, int op2)
   return op1 + op2;
 }
 
+#ifdef FILESYS_STUB
 int SysCreate(char *filename)
 {
   // return value
@@ -57,5 +58,14 @@ int SysCreate(char *filename)
   // 0: failed
   return kernel->interrupt->CreateFile(filename);
 }
+#else
+int SysCreate(char *filename, int initialSize)
+{
+  // return value
+  // 1: success
+  // 0: failed
+  return kernel->interrupt->CreateFile(filename, initialSize);
+}
+#endif
 
 #endif /* ! __USERPROG_KSYSCALL_H__ */
