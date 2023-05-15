@@ -160,77 +160,77 @@ public:
 
 	OpenFile *Open(char *name); // Open a file (UNIX open)
 
-	// int WriteFile0(char *buffer, int size, OpenFileId id)
-	// {
-	// 	for (int i = 0; i < FDTABLE_LEN; i++)
-	// 	{
-	// 		if (!fileDescriptorTable[i])
-	// 			continue;
-	// 		if (fileDescriptorTable[i]->GetFileDescriptor() == id)
-	// 		{
-	// 			return fileDescriptorTable[i]->Write(buffer, size);
-	// 		}
-	// 	}
-	// 	return -1;
-	// }
+	int WriteFile0(char *buffer, int size, OpenFileId id)
+	{
+		for (int i = 0; i < FDTABLE_LEN; i++)
+		{
+			if (!fileDescriptorTable[i])
+				continue;
+			if (fileDescriptorTable[i]->GetFileDescriptor() == id)
+			{
+				return fileDescriptorTable[i]->Write(buffer, size);
+			}
+		}
+		return -1;
+	}
 
-	// int ReadFile(char *buffer, int size, OpenFileId id)
-	// {
-	// 	for (int i = 0; i < FDTABLE_LEN; i++)
-	// 	{
-	// 		if (!fileDescriptorTable[i])
-	// 			continue;
-	// 		if (fileDescriptorTable[i]->GetFileDescriptor() == id)
-	// 		{
-	// 			return fileDescriptorTable[i]->Read(buffer, size);
-	// 		}
-	// 	}
-	// 	return -1;
-	// }
+	int ReadFile(char *buffer, int size, OpenFileId id)
+	{
+		for (int i = 0; i < FDTABLE_LEN; i++)
+		{
+			if (!fileDescriptorTable[i])
+				continue;
+			if (fileDescriptorTable[i]->GetFileDescriptor() == id)
+			{
+				return fileDescriptorTable[i]->Read(buffer, size);
+			}
+		}
+		return -1;
+	}
 
-	// OpenFileId OpenAFile(char *name)
-	// {
-	// 	OpenFile *file = Open(name);
-	// 	if (!file)
-	// 	{
-	// 		return -1;
-	// 	}
-	// 	int freeIndex = 0;
-	// 	for (int i = 0; i < FDTABLE_LEN; i++)
-	// 	{
-	// 		if (!fileDescriptorTable[i])
-	// 		{
-	// 			freeIndex = i;
-	// 		}
-	// 	}
-	// 	if (!freeIndex)
-	// 	{
-	// 		return -1;
-	// 	}
-	// 	OpenFileId id = file->GetFileDescriptor();
-	// 	fileDescriptorTable[freeIndex] = file;
-	// 	return id;
-	// }
+	OpenFileId OpenAFile(char *name)
+	{
+		OpenFile *file = Open(name);
+		if (!file)
+		{
+			return -1;
+		}
+		int freeIndex = 0;
+		for (int i = 0; i < FDTABLE_LEN; i++)
+		{
+			if (!fileDescriptorTable[i])
+			{
+				freeIndex = i;
+			}
+		}
+		if (!freeIndex)
+		{
+			return -1;
+		}
+		OpenFileId id = file->GetFileDescriptor();
+		fileDescriptorTable[freeIndex] = file;
+		return id;
+	}
 
-	// int CloseFile(OpenFileId id)
-	// {
-	// 	for (int i = 0; i < FDTABLE_LEN; i++)
-	// 	{
-	// 		if (!fileDescriptorTable[i])
-	// 			continue;
-	// 		if (fileDescriptorTable[i]->GetFileDescriptor() == id)
-	// 		{
-	// 			delete fileDescriptorTable[i];
-	// 			fileDescriptorTable[i] = NULL;
-	// 			return 1;
-	// 		}
-	// 	}
-	// 	return 0;
-	// }
+	int CloseFile(OpenFileId id)
+	{
+		for (int i = 0; i < FDTABLE_LEN; i++)
+		{
+			if (!fileDescriptorTable[i])
+				continue;
+			if (fileDescriptorTable[i]->GetFileDescriptor() == id)
+			{
+				delete fileDescriptorTable[i];
+				fileDescriptorTable[i] = NULL;
+				return 1;
+			}
+		}
+		return 0;
+	}
 
-	// bool Remove(char *name); // Delete a file (UNIX unlink)
+	bool Remove(char *name); // Delete a file (UNIX unlink)
 
-	// OpenFile *fileDescriptorTable[FDTABLE_LEN];
+	OpenFile *fileDescriptorTable[FDTABLE_LEN];
 
 	void List(); // List all the files in the file system
 

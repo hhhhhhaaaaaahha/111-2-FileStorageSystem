@@ -42,18 +42,43 @@
 
 bool FileHeader::Allocate(PersistentBitmap *freeMap, int fileSize)
 {
-    // 檢查是否有足夠的空間可以分配給 file
+    // check if there is enough space allocating to file
     numBytes = fileSize;
     numSectors = divRoundUp(fileSize, SectorSize);
+    int lenOfDirectArr = NumDirect;
+    int numDirectSectors = min(numSectors, lenOfDirectArr);
+
     if (freeMap->NumClear() < numSectors)
         return FALSE; // not enough space
 
-    for (int i = 0; i < numSectors; i++)
+    // initialize inderect data sectors to not in use
+    for (int i = 0; i < NumIndirect; i++)
+    {
+        indirectDataSectors[i] = -1;
+    }
+
+    // allocate space with direct sectors
+    for (int i = 0; i < numDirectSectors; i++)
     {
         dataSectors[i] = freeMap->FindAndSet();
         // since we checked that there was enough free space,
         // we expect this to succeed
         ASSERT(dataSectors[i] >= 0);
+    }
+
+    // calculate if we need inderect data sectors
+    int sectorsInNeed = numSectors - lenOfDirectArr;
+
+    if (sectorsInNeed > 0)
+    {
+        for (int i = 0; i < divRoundUp(sectorsInNeed, SectorNumInsideIndirect); i++)
+        {
+            indirectDataSectors[i] = freeMap->FindAndSet();
+            IndirectDataSector *indirect = new IndirectDataSector();
+            indirect->setNumSectors(0);
+
+            sectorsInNeed = indirect->Allocate(freeMap, sectorsInNeed, indirectDataSectors[i]);
+        }
     }
     return TRUE;
 }
@@ -151,4 +176,41 @@ void FileHeader::Print()
         printf("\n");
     }
     delete[] data;
+}
+
+//----------------------------------------------------------------------
+// FileHeader::FetchFrom
+// 	Fetch contents of file header from disk.
+//
+//	"sector" is the disk sector containing the file header
+//----------------------------------------------------------------------
+
+int IndirectDataSector::getNumSectors()
+{
+    return numSectors;
+}
+
+void IndirectDataSector::setNumSectors(int count)
+{
+    numSectors = count;
+}
+
+int IndirectDataSector::Allocate(PersistentBitmap *freeMap, int sectorsInNeed, int indirectSectorIndex)
+{
+    numSectors = divRoundUp(sectorsInNeed, SectorSize);
+    for (int i = 0; i < sectorsInNeed; i++)
+    {
+        dataSectors[i] = freeMap->FindAndSet();
+        int count = getNumSectors();
+        setNumSectors(count + 1);
+    }
+    // 將 IndirectDataSector 寫回 sector 裡
+    kernel->synchDisk->WriteSector(indirectSectorIndex, (char *)this);
+
+    return sectorsInNeed - getNumSectors();
+}
+
+void IndirectDataSector::FetchFrom(int sector)
+{
+    kernel->synchDisk->ReadSector(sector, (char *)this);
 }
